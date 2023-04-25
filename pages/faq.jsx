@@ -1,9 +1,12 @@
+import Layout from "@/components/Layout"
+import Menu from "@/components/Menu"
+
 function faq() {
   return (
-    <div>
-        <h1>FAQ</h1>
-        <p>hola que have</p>
-    </div>
+    <Layout>
+      <Menu/>
+      <h1>FAQ</h1>
+    </Layout>
   )
 }
 
