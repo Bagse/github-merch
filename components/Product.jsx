@@ -50,7 +50,7 @@ function Product({ item, showAs, qty }) {
             className="rounded"
             src={item.image}
             alt="imagen de la store"
-            width={120}
+            width={110}
             height={100}
           />
         </div>

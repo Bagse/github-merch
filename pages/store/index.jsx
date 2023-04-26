@@ -3,6 +3,7 @@ import { getItems } from "@/services/ItemService";
 import Menu from "@/components/Menu";
 import Product from "@/components/Product";
 import {IoStorefrontOutline} from "react-icons/io5"
+import Footer from "@/components/Footer";
 
 function store({ items }) {
   return (
@@ -16,6 +17,7 @@ function store({ items }) {
         ))}
       </div>
       
+      <Footer />
     </Layout>
   );
 }

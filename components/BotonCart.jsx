@@ -3,8 +3,10 @@ import { useAppContext } from "./CarritoComprasData";
 
 function BotonCart({ item }) {
   const cart = useAppContext();
+
   function handleClick() {
     cart.addItemToCart(item);
+    cart.openCart()
   }
   return (
     <div>
