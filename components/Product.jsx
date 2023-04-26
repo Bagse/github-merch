@@ -88,7 +88,7 @@ function Product({ item, showAs, qty }) {
           <Image
             className="rounded-md hover:scale-105 transition-all"
             src={item.image}
-            alt={item.description}
+            alt="imagen producto store"
             width={500}
             height={500}
           />
