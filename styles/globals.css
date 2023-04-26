@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body{
-      @apply bg-[#141414] text-white;
+      @apply bg-[#141414] text-white font-popins;
   }
   li{
     @apply list-none;

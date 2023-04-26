@@ -1,4 +1,5 @@
 import Head from "next/head";
+import ShoppingCart from "./ShoppingCart";
 
 function Layout({ children, title }) {
   return (
@@ -10,7 +11,8 @@ function Layout({ children, title }) {
         <meta name="description" content="Mi tienda" />
       </Head>
 
-      <div className="">{...children}</div>
+      <div className="">{children}</div>
+      <ShoppingCart />
     </div>
   );
 }

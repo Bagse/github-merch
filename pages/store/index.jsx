@@ -1,28 +1,21 @@
 import Layout from "@/components/Layout";
 import { getItems } from "@/services/ItemService";
-import Image from "next/legacy/image";
 import Menu from "@/components/Menu";
+import Product from "@/components/Product";
+import {IoStorefrontOutline} from "react-icons/io5"
 
 function store({ items }) {
   return (
     <Layout>
       <Menu/>
-      <h1>Store</h1>
+      <h1 className="flex gap-3 text-4xl font-bold px-20 py-10 text-sky-500"><IoStorefrontOutline/>Store</h1>
+      <div className="grid grid-cols-4 gap-5 px-20 py-5">
       {items &&
         items.map((item) => (
-          <div className="px-5 py-3" key={item.id}>
-            <div className="flex flex-col place-items-center gap-3 ">
-              <h1>{item.title}</h1>
-              <Image
-                className="rounded-md"
-                src={item.image}
-                alt={item.title}
-                width={"240"}
-                height={"240"}
-              />
-            </div>
-          </div>
+          <Product key={item.id} item={item} showAs="Default" />
         ))}
+      </div>
+      
     </Layout>
   );
 }
