@@ -11,7 +11,7 @@ function Product({ item, showAs, qty }) {
         <div className="px-12 py-4">
           <Image
             className="hover:scale-125 transition-all w-screen h-96 object-contain"
-            src={item.data.image}
+            src={item.image}
             alt="imagen de la store"
             width={"500"}
             height={"300"}
@@ -20,22 +20,22 @@ function Product({ item, showAs, qty }) {
         <div className="flex flex-col gap-5 px-5 py-20 bg-slate-800">
           <div>
             <h2 className="text-5xl text-sky-800 font-bold">
-              {item.data.title}
+              {item.title}
             </h2>
           </div>
           <div>
             <p className="flex items-center text-2xl text-emerald-400 font-semibold">
               <HiCurrencyDollar />
-              {item.data.price}
+              {item.price}
             </p>
           </div>
           <div>
             <h3 className="text-md text-slate-300">Descripción:</h3>
-            <p className="text-lg">{item.data.description}</p>
+            <p className="text-lg">{item.description}</p>
           </div>
           <div>
             <h3 className="text-md text-slate-300">Sostenibilidad:</h3>
-            <p className="text-lg">{item.data.sustainability}</p>
+            <p className="text-lg">{item.sustainability}</p>
           </div>
           <BotonCart item={item} />
         </div>

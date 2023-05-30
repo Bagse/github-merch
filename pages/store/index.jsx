@@ -25,11 +25,26 @@ function store({ items }) {
 export default store;
 
 export async function getStaticProps() {
-  const res = await getItems();
-
-  return {
-    props: {
-      items: res,
-    },
-  };
+  try {
+    const items = await getItems();
+    return {
+      props: {
+        items: items || [], // Si los datos son nulos, se proporciona un arreglo vacío como valor predeterminado
+      },
+    };
+  } catch (error) {
+    console.error("Error al obtener los datos de los productos:", error);
+    return {
+      props: {
+        items: [], // Si ocurre un error, se proporciona un arreglo vacío
+      },
+    };
+  }
 }
+
+
+
+
+
+
+

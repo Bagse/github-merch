@@ -1,7 +1,8 @@
+import axios from 'axios';
+
 export async function getItems() {
-  const request = await fetch("http://localhost:3000/api/items");
-  const items = await request.json();
-  return items;
+  const response = await axios.get("https://apimocha.com/alurageekapi/items");
+  return response.data;
 }
 
 export async function getLatestItems() {
