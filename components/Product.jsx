@@ -11,7 +11,7 @@ function Product({ item, showAs, qty }) {
         <div className="px-12 py-4">
           <Image
             className="hover:scale-125 transition-all w-screen h-96 object-contain"
-            src={item.image}
+            src={item.data.image}
             alt="imagen de la store"
             width={"500"}
             height={"300"}
@@ -20,22 +20,22 @@ function Product({ item, showAs, qty }) {
         <div className="flex flex-col gap-5 px-5 py-20 bg-slate-800">
           <div>
             <h2 className="text-5xl text-sky-800 font-bold">
-              {item.title}
+              {item.data.title}
             </h2>
           </div>
           <div>
             <p className="flex items-center text-2xl text-emerald-400 font-semibold">
               <HiCurrencyDollar />
-              {item.price}
+              {item.data.price}
             </p>
           </div>
           <div>
             <h3 className="text-md text-slate-300">Descripción:</h3>
-            <p className="text-lg">{item.description}</p>
+            <p className="text-lg">{item.data.description}</p>
           </div>
           <div>
             <h3 className="text-md text-slate-300">Sostenibilidad:</h3>
-            <p className="text-lg">{item.sustainability}</p>
+            <p className="text-lg">{item.data.sustainability}</p>
           </div>
           <BotonCart item={item} />
         </div>
@@ -82,7 +82,7 @@ function Product({ item, showAs, qty }) {
   }
 
   return (
-    <div className=" bg-white px-5 py-4 rounded text-black shadow-md shadow-slate-800">
+    <div className=" bg-white px-2 md:px-5 py-3 md:py-4 rounded text-black shadow-md shadow-slate-800">
       <div>
         <Link href={`/store/${convertToPath(item.title)}`}>
           <Image
@@ -97,7 +97,7 @@ function Product({ item, showAs, qty }) {
       <div>
         <h3>
           <Link href={`/store/${convertToPath(item.title)}`}>
-            <h1 className=" text-xl font-semibold italic">{item.title}</h1>
+            <h1 className=" text-xl font-semibold md:italic">{item.title}</h1>
           </Link>
         </h3>
       </div>

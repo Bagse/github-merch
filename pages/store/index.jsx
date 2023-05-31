@@ -9,8 +9,8 @@ function store({ items }) {
   return (
     <Layout>
       <Menu/>
-      <h1 className="flex gap-3 text-4xl font-bold px-20 py-10 text-sky-500"><IoStorefrontOutline/>Store</h1>
-      <div className="grid grid-cols-4 gap-5 px-20 py-5">
+      <h1 className="flex gap-3 items-center text-3xl md:text-4xl font-bold px-3 md:px-20 py-7 md:py-10 text-sky-500"><IoStorefrontOutline/>Store</h1>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 px-3 md:px-20 py-2 md:py-5">
       {items &&
         items.map((item) => (
           <Product key={item.id} item={item} showAs="Default" />

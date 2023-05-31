@@ -12,8 +12,8 @@ function Menu() {
   }
   return (
     <div className="bg-slate-800 ">
-      <nav className="flex items-center justify-around px-5 py-5 shadow shadow-[white]">
-        <div className="flex gap-5 text-lg">
+      <nav className="flex items-center  justify-between md:justify-around px-3 md:px-5 py-5 shadow shadow-[white]">
+        <div className="flex gap-5 text-xl md:text-lg">
           <Link href={"/"}>
             <li className="hover:text-sky-500 flex items-center gap-1">
               <BiHomeAlt />
