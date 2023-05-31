@@ -5,10 +5,15 @@ import { HiCurrencyDollar } from "react-icons/hi2";
 
 function ShoppingCart() {
   const cart = useAppContext();
+  const { removeItemFromCart } = cart;
 
   function handleCloseCart() {
     cart.closeCart();
   }
+
+  const handleRemoveClick = (item) => {
+    removeItemFromCart(item);
+  };
 
   function getTotal() {
     const total = cart.items.reduce(
@@ -44,6 +49,7 @@ function ShoppingCart() {
                 item={item}
                 showAs="ListItem"
                 qty={item.qty}
+                onRemoveClick={handleRemoveClick}
               />
             ))}
           </div>

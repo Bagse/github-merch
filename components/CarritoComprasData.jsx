@@ -41,6 +41,11 @@ function CarritoComprasData({ children }) {
     return total;
   }
 
+  function handleRemoveItemFromCart(item) {
+    const updatedItems = items.filter((product) => product.id !== item.id);
+    setItems(updatedItems);
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -49,6 +54,7 @@ function CarritoComprasData({ children }) {
         openCart: handleOpenCart,
         closeCart: handleCloseCart,
         addItemToCart: handleAddItemToCard,
+        removeItemFromCart: handleRemoveItemFromCart,
         getNumberOfItems: handleNumberOfItems,
       }}
     >

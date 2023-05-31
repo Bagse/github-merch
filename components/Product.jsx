@@ -3,11 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import BotonCart from "./BotonCart";
 import { HiCurrencyDollar } from "react-icons/hi2";
+import { CiCircleRemove } from "react-icons/ci";
 
-function Product({ item, showAs, qty }) {
+function Product({ item, showAs, qty, onRemoveClick }) {
+  const handleRemoveClick = () => {
+    onRemoveClick(item);
+  };
   if (showAs === "Page") {
     return (
-      <div className="flex bg-white mx-48 my-20  rounded-md items-center shadow-md shadow-gray-500">
+      <div className="flex flex-wrap md:flex-nowrap bg-white mx-3 md:mx-48 my-20  rounded-md items-center shadow-md shadow-gray-500">
         <div className="px-12 py-4">
           <Image
             className="hover:scale-125 transition-all w-screen h-96 object-contain"
@@ -17,7 +21,7 @@ function Product({ item, showAs, qty }) {
             height={"300"}
           />
         </div>
-        <div className="flex flex-col gap-5 px-5 py-20 bg-slate-800">
+        <div className="flex flex-col gap-5 px-3 md:px-5 py-5 md:py-20 bg-slate-800">
           <div>
             <h2 className="text-5xl text-sky-800 font-bold">
               {item.data.title}
@@ -47,7 +51,7 @@ function Product({ item, showAs, qty }) {
       <div className="flex gap-2 items-center border-b-4 border-gray-500 py-3 px-2">
         <div>
           <Image
-            className="rounded"
+            className="rounded w-full h-full"
             src={item.image}
             alt="imagen de la store"
             width={110}
@@ -59,7 +63,10 @@ function Product({ item, showAs, qty }) {
             <h2 className="text-lg text-sky-400 font-semibold">{item.title}</h2>
           </div>
           <div>
-            <p className="flex items-center gap-1"><HiCurrencyDollar />{item.price}</p>
+            <p className="flex items-center gap-1">
+              <HiCurrencyDollar />
+              {item.price}
+            </p>
           </div>
           {qty === 0 ? (
             ""
@@ -73,10 +80,16 @@ function Product({ item, showAs, qty }) {
             ""
           ) : (
             <div>
-              <p className="flex items-center gap-1">Subtotal:  <HiCurrencyDollar />{qty * item.price}</p>
+              <p className="flex items-center gap-1">
+                Subtotal: <HiCurrencyDollar />
+                {qty * item.price}
+              </p>
             </div>
           )}
         </div>
+        <button onClick={handleRemoveClick}>
+          <CiCircleRemove className="text-red-700 hover:text-red-500 w-5 h-8" />
+        </button>
       </div>
     );
   }
