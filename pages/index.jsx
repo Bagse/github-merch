@@ -18,6 +18,7 @@ export default function Home({ items }) {
               src="/banner.webp"
               width={1280}
               height={1200}
+              priority
             />
           </div>
           <div className="absolute md:z-10 flex flex-col justify-start px-0 md:px-10 py-24">

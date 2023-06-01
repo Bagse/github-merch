@@ -4,10 +4,28 @@ import Link from "next/link";
 import BotonCart from "./BotonCart";
 import { HiCurrencyDollar } from "react-icons/hi2";
 import { CiCircleRemove } from "react-icons/ci";
+import { BsFillPlusCircleFill } from "react-icons/bs";
+import { BsDashCircleFill } from "react-icons/bs";
 
-function Product({ item, showAs, qty, onRemoveClick }) {
+function Product({
+  item,
+  showAs,
+  qty,
+  onRemoveClick,
+  onIncreaseClick,
+  onDecreaseClick,
+}) {
+  
   const handleRemoveClick = () => {
     onRemoveClick(item);
+  };
+
+  const handleIncreaseQty = () => {
+    onIncreaseClick(item);
+  };
+
+  const handleDecreaseQty = () => {
+    onDecreaseClick(item);
   };
   if (showAs === "Page") {
     return (
@@ -19,6 +37,7 @@ function Product({ item, showAs, qty, onRemoveClick }) {
             alt="imagen de la store"
             width={"500"}
             height={"300"}
+            priority
           />
         </div>
         <div className="flex flex-col gap-5 px-3 md:px-5 py-5 md:py-20 bg-slate-800">
@@ -56,6 +75,7 @@ function Product({ item, showAs, qty, onRemoveClick }) {
             alt="imagen de la store"
             width={110}
             height={100}
+            priority
           />
         </div>
         <div className="flex flex-col">
@@ -68,6 +88,12 @@ function Product({ item, showAs, qty, onRemoveClick }) {
               {item.price}
             </p>
           </div>
+          <div className="flex space-x-3 items-center">
+            <button onClick={handleDecreaseQty} className="hover:text-gray-300"><BsDashCircleFill/></button>
+            <span>{qty}</span>
+            <button onClick={handleIncreaseQty} className="hover:text-gray-300"><BsFillPlusCircleFill/></button>
+          </div>
+
           {qty === 0 ? (
             ""
           ) : (
@@ -104,6 +130,7 @@ function Product({ item, showAs, qty, onRemoveClick }) {
             alt="imagen producto store"
             width={500}
             height={500}
+            priority
           />
         </Link>
       </div>

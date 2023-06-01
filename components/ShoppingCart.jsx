@@ -2,6 +2,7 @@ import { useAppContext } from "./CarritoComprasData";
 import Product from "./Product";
 import { BiGhost } from "react-icons/bi";
 import { HiCurrencyDollar } from "react-icons/hi2";
+import { MdPayment } from "react-icons/md";
 
 function ShoppingCart() {
   const cart = useAppContext();
@@ -13,6 +14,14 @@ function ShoppingCart() {
 
   const handleRemoveClick = (item) => {
     removeItemFromCart(item);
+  };
+
+  const handleIncreaseQty = (item) => {
+    cart.increaseItemQty(item);
+  };
+
+  const handleDecreaseQty = (item) => {
+    cart.decreaseItemQty(item);
   };
 
   function getTotal() {
@@ -50,11 +59,21 @@ function ShoppingCart() {
                 showAs="ListItem"
                 qty={item.qty}
                 onRemoveClick={handleRemoveClick}
+                onIncreaseClick={handleIncreaseQty}
+                onDecreaseClick={handleDecreaseQty}
               />
             ))}
           </div>
           <div className="px-2 py-2">
-            <p className="flex items-center justify-center gap-1 text-emerald-400 text-2xl"><span className="text-white">Total:</span> <HiCurrencyDollar />{getTotal()}</p>
+            <p className="flex items-center justify-center gap-1 text-emerald-400 text-2xl">
+              <span className="text-white">Total:</span> <HiCurrencyDollar />
+              {getTotal()}
+            </p>
+          </div>
+          <div className="flex place-content-center py-5">
+            <button className="bg-blue-500 px-4 py-3 rounded font-semibold hover:bg-blue-700 transition-all flex gap-3 items-center">
+              Completar pago <MdPayment className="h-[20px] w-[20px]"/>
+            </button>
           </div>
         </>
       )}

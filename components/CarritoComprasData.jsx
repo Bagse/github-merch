@@ -46,6 +46,32 @@ function CarritoComprasData({ children }) {
     setItems(updatedItems);
   }
 
+  function handleIncreaseItemQty(item) {
+    const updatedItems = items.map((product) => {
+      if (product.id === item.id) {
+        return {
+          ...product,
+          qty: product.qty + 1,
+        };
+      }
+      return product;
+    });
+    setItems(updatedItems);
+  }
+  
+  function handleDecreaseItemQty(item) {
+    const updatedItems = items.map((product) => {
+      if (product.id === item.id && product.qty > 1) {
+        return {
+          ...product,
+          qty: product.qty - 1,
+        };
+      }
+      return product;
+    });
+    setItems(updatedItems);
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -55,6 +81,8 @@ function CarritoComprasData({ children }) {
         closeCart: handleCloseCart,
         addItemToCart: handleAddItemToCard,
         removeItemFromCart: handleRemoveItemFromCart,
+        increaseItemQty: handleIncreaseItemQty,
+        decreaseItemQty: handleDecreaseItemQty,
         getNumberOfItems: handleNumberOfItems,
       }}
     >
