@@ -1,4 +1,6 @@
-![image](https://user-images.githubusercontent.com/102260190/234680874-0484e855-1f86-49e0-b74b-ea1352cf3b93.png)
+![image](https://github.com/Bagse/github-merch/assets/102260190/c6ee637e-783e-4924-9dc4-970c7f475fc1)
+![image](https://github.com/Bagse/github-merch/assets/102260190/9e8865a9-c185-45cb-bda4-c60a2a0adfa3)
+
 
 
 
