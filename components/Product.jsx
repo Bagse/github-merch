@@ -67,10 +67,10 @@ function Product({
   }
   if (showAs === "ListItem") {
     return (
-      <div className="flex gap-2 items-center border-b-4 border-gray-500 py-3 px-2">
+      <div className="flex gap-2 border-b-4 border-gray-500 py-3 px-2">
         <div>
           <Image
-            className="rounded w-full h-full"
+            className="rounded w-[200px] h-[110px] object-cover"
             src={item.image}
             alt="imagen de la store"
             width={110}
@@ -89,9 +89,9 @@ function Product({
             </p>
           </div>
           <div className="flex space-x-3 items-center">
-            <button onClick={handleDecreaseQty} className="hover:text-gray-300"><BsDashCircleFill/></button>
+            <button onClick={handleDecreaseQty} className="hover:text-green-300"><BsDashCircleFill/></button>
             <span>{qty}</span>
-            <button onClick={handleIncreaseQty} className="hover:text-gray-300"><BsFillPlusCircleFill/></button>
+            <button onClick={handleIncreaseQty} className="hover:text-green-300"><BsFillPlusCircleFill/></button>
           </div>
 
           {qty === 0 ? (
@@ -137,7 +137,7 @@ function Product({
       <div>
         <h3>
           <Link href={`/store/${convertToPath(item.title)}`}>
-            <h1 className=" text-xl font-semibold md:italic">{item.title}</h1>
+            <h1 className="text-xl font-semibold md:italic truncate">{item.title}</h1>
           </Link>
         </h3>
       </div>
